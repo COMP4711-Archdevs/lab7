@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+DTD model for set 4s's term timetable.
+-->
+
+<!--
+    TODO define vocabulary identification data
+    PUBLIC ID  : -//vendor//vocabulary//EN
+    SYSTEM ID  : http://server/path/__NAME__
+-->
+
+<!-- timetable -->
+<!ELEMENT schedule (days, periods, courses)>
+
+<!-- days in a week -->
+<!ELEMENT days (dayofweek)>
+
+<!-- day -->
+<!ELEMENT dayofweek (booking*)>
+
+<!-- a booking in a day -->
+<!ELEMENT booking(course, timeslot, room)>
+
+<!-- an offered course -->
+<!ELEMENT course (name, instructor)>
+
+
+
