@@ -5,20 +5,35 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<!DOCTYPE schedule SYSTEM '-//W3C//DTD HTML 3.2 Final//EN' 'timetableDTD.dtd'>
+<!DOCTYPE schedule SYSTEM 'timetableDTD.dtd'>
 
 <schedule>
-    <week>
-        <dayofweek>
+    <week week = "8">
+        <dayofweek day="Monday">
             <booking>
                 <course>
-                    <name></name>
-                    <instructor></instructor>
+                    <name>BLAW3600 Lab</name>
+                    <instructor>Catherine Ryan</instructor>
                 </course>
-                <timeslot></timeslot>
-                <room></room>
+                <timeslot>9:30 to 11:20</timeslot>
+                <room>SW3-4785</room>
             </booking>
-            <booking></booking>
+            <booking>
+                <course>
+                    <name>COMP4735 Lec</name>
+                    <instructor>Mirela Gutica</instructor>
+                </course>
+                <timeslot>11:30 to 12:20</timeslot>
+                <room>SW1-1205</room>
+            </booking>
+            <booking>
+                <course>
+                    <name>COMP4735 Lab</name>
+                    <instructor>Mirela Gutica</instructor>
+                </course>
+                <timeslot>12:30 to 2:20</timeslot>
+                <room>SE12-320</room>
+            </booking>
         </dayofweek>
     </week>
 
