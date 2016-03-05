@@ -43,8 +43,20 @@ and open the template in the editor.
 
     <courses>
         <coursedetails>
-            <coursename></coursename>
-            <courseinstructor></courseinstructor>
+            <coursename>COMP4711 Lab</coursename>
+            <courseinstructor>Jim Parry</courseinstructor>
+        </coursedetails>
+        <coursedetails>
+            <coursename>BLAW 3600 Lec</coursename>
+            <courseinstructor>Catherine Ryan</courseinstructor>
+        </coursedetails>
+        <coursedetails>
+            <coursename>COMP 4560 Lec</coursename>
+            <courseinstructor>Brenda Fine</courseinstructor>
+        </coursedetails>
+        <coursedetails>
+            <coursename>COMP 4976 Lec</coursename>
+            <courseinstructor>Medhat ElMasry</courseinstructor>
         </coursedetails>
     </courses>
 </schedule>
