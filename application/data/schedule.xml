@@ -27,6 +27,12 @@ and open the template in the editor.
     </periods>
 
     <courses>
-
+        <coursedetails>
+            <coursename></coursename>
+            <courseinstructor></courseinstructor>
+        </coursedetails>
     </courses>
 </schedule>
+
+
+
