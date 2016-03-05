@@ -38,7 +38,140 @@ and open the template in the editor.
     </week>
 
     <periods>
+        <periodtimeslot time="830">
+                <periodbooking>
+                    <weekday>Tuesday</weekday>
+                    <coursename>COMP 4977</coursename>
+                    <courseinstructor>D'Arcy Smith</courseinstructor>
+                    <room>SE12-325</room>                  
+                </periodbooking>
 
+                <periodbooking>
+                    <weekday>Thursday</weekday>
+                    <coursename>COMP 4976</coursename>
+                    <courseinstructor>Medhat Elmasry</courseinstructor>
+                    <room>SE12-308</room>
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Friday</weekday>
+                    <coursename>BLAW 3600</coursename>
+                    <courseinstructor>Catherine Ryan</courseinstructor>
+                    <room>SW5-1840</room> 
+                </periodbooking>
+        </periodtimeslot>
+
+        <periodtimeslot time="930">
+                <periodbooking>
+                    <weekday>Monday</weekday>
+                    <coursename>BLAW 3600</coursename>
+                    <courseinstructor>Catherine Ryan</courseinstructor>
+                    <room>SW3-4785</room> 
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Wednesday</weekday>
+                    <coursename>COMP 4711</coursename>
+                    <courseinstructor>James Parry</courseinstructor>
+                    <room>SE12-320</room> 
+                </periodbooking>
+        </periodtimeslot>
+
+        <periodtimeslot time="1030">
+                <periodbooking>
+                    <weekday>Friday</weekday>
+                    <coursename>COMP 4976</coursename>
+                    <courseinstructor>Medhat Elmasry</courseinstructor>
+                    <room>SE12-308</room>
+                </periodbooking>
+        </periodtimeslot>
+
+        <periodtimeslot time="1130">
+                <periodbooking>
+                    <weekday>Monday</weekday>
+                    <coursename>COMP 4735</coursename>
+                    <courseinstructor>Mirela Gutica</courseinstructor>
+                    <room>SW1-1205</room> 
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Tuesday</weekday>
+                    <coursename>COMP 4560</coursename>
+                    <courseinstructor>Brenda Fine</courseinstructor>
+                    <room>SW5-1850</room> 
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Thursday</weekday>
+                    <coursename>COMP 4735</coursename>
+                    <courseinstructor>Mirela Gutica</courseinstructor>
+                    <room>SW3-1710</room> 
+                </periodbooking>
+        </periodtimeslot>
+
+        <periodtimeslot time="1230">
+                <periodbooking>
+                    <weekday>Monday</weekday>
+                    <coursename>COMP 4735</coursename>
+                    <courseinstructor>Mirela Gutica</courseinstructor>
+                    <room>SE12-320</room> 
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Thursday</weekday>
+                    <coursename>COMP 4976</coursename>
+                    <courseinstructor>Medhat Elmasry</courseinstructor>
+                    <room>SE12-308</room>
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Friday</weekday>
+                    <coursename>COMP 4560</coursename>
+                    <courseinstructor>Brenda Fine</courseinstructor>
+                    <room>SE3-1750</room> 
+                </periodbooking>
+        </periodtimeslot>
+
+        <periodtimeslot time="1330">
+                <periodbooking>
+                    <weekday>Wednesday</weekday>
+                    <coursename>COMP 4735</coursename>
+                    <courseinstructor>Mirela Gutica</courseinstructor>
+                    <room>SW1-1205</room> 
+                </periodbooking>
+        </periodtimeslot>
+
+        <periodtimeslot time="1430">
+                <periodbooking>
+                    <weekday>Tuesday</weekday>
+                    <coursename>COMP 4711</coursename>
+                    <courseinstructor>James Parry</courseinstructor>
+                    <room>SW5-1840</room> 
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Friday</weekday>
+                    <coursename>COMP 4977</coursename>
+                    <courseinstructor>D'Arcy Smith</courseinstructor>
+                    <room>SE12-325</room>    
+                </periodbooking>
+        </periodtimeslot>
+
+        <periodtimeslot time="1530">
+                <periodbooking>
+                    <weekday>Tuesday</weekday>
+                    <coursename>COMP 4560</coursename>
+                    <courseinstructor>Joseph Lo</courseinstructor>
+                    <room>SE12-322</room>
+                </periodbooking>
+
+                <periodbooking>
+                    <weekday>Friday</weekday>
+                    <coursename>COMP 4977</coursename>
+                    <courseinstructor>D'Arcy Smith</courseinstructor>
+                    <room>SE12-325</room> 
+                </periodbooking>
+        </periodtimeslot>
     </periods>
 
     <courses>

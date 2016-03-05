@@ -58,5 +58,16 @@ DTD model for set 4s's term timetable.
 <!-- name of the instructor of the course as a string, ex: "Jim Parry" -->
 <!ELEMENT courseinstructor (#PCDATA)>
 
+<!-- periods -->
+<!ELEMENT periods (periodtimeslot*)>
 
+<!-- periods time slot. ex: 830, 930 -->
+<!ELEMENT periodtimeslot (periodbooking)*>
+<!ATTLIST periodtimeslot time (830|930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED>
+
+<!-- detail of what is in that period time slot, ex: which day, which course, ..-->
+<!ELEMENT periodbooking (weekday, coursename, courseinstructor, room)>
+
+<!-- monday, tuesday .. -->
+<!ELEMENT weekday (#PCDATA)>
 
