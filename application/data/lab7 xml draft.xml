@@ -1,5 +1,5 @@
 <schedule>
-	<days>
+	<week>
 		<dayofweek>
 			<booking>
 				<course>
@@ -10,9 +10,10 @@
 				<room></room>
 			</booking>
 			<booking></booking>
-			...
+                        ...
 		</dayofweek>
-	</days>
+                ...
+	</week>
 	
 	<periods>
 		
