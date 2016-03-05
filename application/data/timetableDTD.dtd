@@ -36,3 +36,21 @@ DTD model for set 4s's term timetable.
 <!-- instructor id or name, represented by a string -->
 <!ELEMENT instructor (#PCDATA)>
 
+
+<!-- Booking goes here -->
+
+
+<!-- list of coursedetails -->
+<!ELEMENT courses (coursedetails+)>
+
+<!-- holds the details of the course (name and instructor) -->
+<!ELEMENT coursedetails (coursename, courseinstructor)>
+
+<!-- name of the course as a string, ex: "COMP4560" -->
+<!ELEMENT coursename (#PCDATA)>
+
+<!-- name of the instructor of the course as a string, ex: "Jim Parry" -->
+<!ELEMENT courseinstructor (#PCDATA)>
+
+
+
