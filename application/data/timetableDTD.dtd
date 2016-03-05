@@ -9,20 +9,30 @@ DTD model for set 4s's term timetable.
     SYSTEM ID  : http://server/path/__NAME__
 -->
 
-<!-- timetable -->
-<!ELEMENT schedule (days, periods, courses)>
+<!-- timetable (scene 1) -->
+<!ELEMENT schedule (week, periods, courses)>
 
-<!-- days in a week -->
-<!ELEMENT days (dayofweek)>
+<!-- a week contains 7 days, we picked this because our schedule repeats on a weekly basis -->
+<!ELEMENT week (dayofweek*)>
 
-<!-- day -->
+<!-- monday, tuesday, etc. -->
 <!ELEMENT dayofweek (booking*)>
 
 <!-- a booking in a day -->
-<!ELEMENT booking(course, timeslot, room)>
+<!ELEMENT booking (course, timeslot, room)>
+
+<!-- timeslot specifies a time range in a day -->
+<!ELEMENT timeslot (#PCDATA)>
+
+<!-- room is specified by a string, indicating building and room number (ex. SW5-1840) -->
+<!ELEMENT room (#PCDATA)>
 
 <!-- an offered course -->
 <!ELEMENT course (name, instructor)>
 
+<!-- name of the course -->
+<!ELEMENT name (#PCDATA)>
 
+<!-- instructor id or name, represented by a string -->
+<!ELEMENT instructor (#PCDATA)>
 
