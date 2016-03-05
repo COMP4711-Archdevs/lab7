@@ -14,14 +14,20 @@ DTD model for set 4s's term timetable.
 
 <!-- a week contains 7 days, we picked this because our schedule repeats on a weekly basis -->
 <!ELEMENT week (dayofweek*)>
+<!ATTLIST week
+    week (1|2|3|4|5|6|7|8|9|10|11|12|13|14) "1"
+>
 
 <!-- monday, tuesday, etc. -->
 <!ELEMENT dayofweek (booking*)>
+<!ATTLIST dayofweek
+    day     (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) "Monday"
+>
 
 <!-- a booking in a day -->
 <!ELEMENT booking (course, timeslot, room)>
 
-<!-- timeslot specifies a time range in a day -->
+<!-- timeslot string specifies a time range in a day, optionally can include start and end time to check for conflicts -->
 <!ELEMENT timeslot (#PCDATA)>
 
 <!-- room is specified by a string, indicating building and room number (ex. SW5-1840) -->
