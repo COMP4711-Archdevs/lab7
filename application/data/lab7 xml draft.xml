@@ -1,0 +1,25 @@
+<schedule>
+	<week>
+		<dayofweek>
+			<booking>
+				<course>
+					<name></name>
+					<instructor></instructor>
+				</course>
+				<timeslot></timeslot>
+				<room></room>
+			</booking>
+			<booking></booking>
+                        ...
+		</dayofweek>
+                ...
+	</week>
+	
+	<periods>
+		
+	</periods>
+	
+	<courses>
+		
+	</courses>
+</schedule>

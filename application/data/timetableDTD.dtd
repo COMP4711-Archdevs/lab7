@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+DTD model for set 4s's term timetable.
+-->
+
+<!--
+    TODO define vocabulary identification data
+    PUBLIC ID  : -//vendor//vocabulary//EN
+    SYSTEM ID  : http://server/path/__NAME__
+-->
+
+<!-- timetable (scene 1) -->
+<!ELEMENT schedule (week, periods, courses)>
+
+<!-- a week contains 7 days, we picked this because our schedule repeats on a weekly basis -->
+<!ELEMENT week (dayofweek*)>
+<!ATTLIST week
+    week (1|2|3|4|5|6|7|8|9|10|11|12|13|14) "1"
+>
+
+<!-- monday, tuesday, etc. -->
+<!ELEMENT dayofweek (booking*)>
+<!ATTLIST dayofweek
+    day     (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) "Monday"
+>
+
+<!-- a booking in a day -->
+<!ELEMENT booking (course, timeslot, room)>
+
+<!-- timeslot string specifies a time range in a day, optionally can include start and end time to check for conflicts -->
+<!ELEMENT timeslot (#PCDATA)>
+
+<!-- room is specified by a string, indicating building and room number (ex. SW5-1840) -->
+<!ELEMENT room (#PCDATA)>
+
+<!-- an offered course -->
+<!ELEMENT course (name, instructor)>
+
+<!-- name of the course -->
+<!ELEMENT name (#PCDATA)>
+
+<!-- instructor id or name, represented by a string -->
+<!ELEMENT instructor (#PCDATA)>
+
+
+<!-- Booking goes here -->
+
+
+<!-- list of coursedetails -->
+<!ELEMENT courses (coursedetails+)>
+
+<!-- holds the details of the course (name and instructor) -->
+<!ELEMENT coursedetails (coursename, courseinstructor)>
+
+<!-- name of the course as a string, ex: "COMP4560" -->
+<!ELEMENT coursename (#PCDATA)>
+
+<!-- name of the instructor of the course as a string, ex: "Jim Parry" -->
+<!ELEMENT courseinstructor (#PCDATA)>
+
+<!-- periods -->
+<!ELEMENT periods (periodtimeslot*)>
+
+<!-- periods time slot. ex: 830, 930 -->
+<!ELEMENT periodtimeslot (periodbooking)*>
+<!ATTLIST periodtimeslot time (830|930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED>
+
+<!-- detail of what is in that period time slot, ex: which day, which course, ..-->
+<!ELEMENT periodbooking (weekday, coursename, courseinstructor, room)>
+
+<!-- monday, tuesday .. -->
+<!ELEMENT weekday (#PCDATA)>
+
