@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-
 	/**
 	 * Index Page for this controller.
 	 *
@@ -18,8 +17,16 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+    
 	public function index()
 	{
-		$this->load->view('welcome_message');
+                $this->load->model('Timetable');
+                echo "<h1>Days</h1><p>";
+                var_dump($this->Timetable->getDaysofweek()); 
+                echo "</p><h1>Periods</h1><p>";
+                var_dump($this->Timetable->getPeriods());
+                echo "</p><h1>Courses</h1><p>";
+                var_dump($this->Timetable->getCourses());  
+                echo "</p>";
 	}
 }
