@@ -21,6 +21,13 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
                 $this->load->model('Timetable');
+                
+                /*!!! the following code is to test functions/values, not final display !!! */
+
+                //methods to populate dropdown
+                var_dump($this->Timetable->getDayDropDown()); 
+                var_dump($this->Timetable->getBookingDropDown()); 
+                
                 echo "<h1>Days</h1><p>";
                 var_dump($this->Timetable->getDaysofweek()); 
                 echo "</p><h1>Periods</h1><p>";

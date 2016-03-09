@@ -13,6 +13,8 @@ class Timetable extends CI_Model{
     protected $daysofweek = array(); 
     protected $periods = array(); 
     protected $courses = array();
+    protected $daydropdown = array();
+    protected $bookingdropdown = array();
     
     public function __construct(){
         parent::__construct();
@@ -26,9 +28,19 @@ class Timetable extends CI_Model{
             $this->daysofweek[(string)$day['day']] = $day;
         }
         
+        //build a list of days of the week
+        foreach($this->xml->week->dayofweek as $day){
+            $this->daydropdown[(string)$day['day']] = (string)$day['day'];
+        }
+        
         //build a list of periods
         foreach($this->xml->periods->periodtimeslot as $period){
             $this->periods[(string)$period['time']] = $period;
+        }
+        
+        //build a list of days of the week
+        foreach($this->xml->periods->periodtimeslot as $period){
+            $this->bookingdropdown[(string)$period['time']] =(string)$period['time'];
         }
         
         //build a list of courses
@@ -37,17 +49,28 @@ class Timetable extends CI_Model{
         }
     }
     
+    //returns each xml child "daysofweek" as object in an array
     function getDaysofweek(){
         return $this->daysofweek;
     }
     
+    //returns the name of the days currently stored in the xml (ex. Monday)
+    function getDayDropDown(){
+        return $this->daydropdown;
+    }
+    
+    //returns each xml child "periodtimeslot" as object in an array
     function getPeriods(){
         return $this->periods;
     }
     
+    //returns the time values currently stored in the xml (ex. 8:30)
+    function getBookingDropDown(){
+        return $this->bookingdropdown;
+    }
+    
+    //returns each xml child "coursedetails" as object in an array
     function getCourses(){
         return $this->courses;
     }
-    
-    
 }
