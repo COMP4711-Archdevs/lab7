@@ -24,33 +24,14 @@ if (!defined('APPPATH'))
     </head>
     <body>
         <div class="navbar navbar-default">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">{title}</a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        {menubar}
-                    </ul>
-                </div>
-            </div>
+            {menubar}
         </div>
         <div class="container">
             <div id="content">
-                <h1>{pageTitle}</h1>
-                <hr/>
                 {content}
             </div>
             <div id="footer" class="text-center">
-                Copyright &copy; 2015-2016,  <a href="mailto:someone@somewhere.com">KAT</a>.
+                Copyright &copy; 2016,  <a href="mailto:someone@somewhere.com">Archdevs</a>.
             </div>
         </div>
         <script src="/assets/js/jquery-1.11.1.min.js"></script>
