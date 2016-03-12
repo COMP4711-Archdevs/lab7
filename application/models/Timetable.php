@@ -34,9 +34,9 @@ class Timetable extends CI_Model{
         }
         
         //build a list of periods
-        foreach($this->xml->periods->periodtimeslot as $period){
+       /* foreach($this->xml->periods->periodtimeslot as $period){
             $this->periods[(string)$period['time']] = $period;
-        }
+        }*/
         
         //build a list of days of the week
         foreach($this->xml->periods->periodtimeslot as $period){
@@ -47,6 +47,21 @@ class Timetable extends CI_Model{
         foreach($this->xml->courses->coursedetails as $course){
             $this->courses[(string)$course->coursename] = $course;
         }
+
+        // Build list of periods
+        foreach ($this->xml->periods->periodtimeslot as $timeslot) {
+            $record = new stdClass();
+
+            $record->time     = (string) $timeslot['time'];
+            $record->bookings = array();
+
+            foreach ($timeslot->periodbooking as $booking) {
+                array_push($record->bookings, new Booking($booking));
+            }
+            array_push($this->periods, $record);
+        }
+
+
     }
     
     //returns each xml child "daysofweek" as object in an array
@@ -73,4 +88,23 @@ class Timetable extends CI_Model{
     function getCourses(){
         return $this->courses;
     }
+}
+
+class Booking extends CI_Model {
+    public $day        = null;
+    public $coursename    = null;
+    public $time       = null;
+    public $instructorname = null;
+    public $room   = '';
+
+    function __construct($booking) {
+        parent::__construct();
+
+        $this->day        = (string) $booking->weekday;
+        $this->coursename     = (string) $booking->coursename;
+        $this->instructorname = (string) $booking->courseinstructor;
+        $this->room   = (string) $booking->room;
+
+    }
+
 }
