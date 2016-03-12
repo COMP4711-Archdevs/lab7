@@ -28,7 +28,7 @@
     <div class="col-md-6">
         <h3>Days</h3>
         {days}
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <!-- Default panel contents -->
             <div class="panel-heading">{weekday}</div>
 
@@ -50,5 +50,22 @@
             </table>
         </div>
         {/days}
+        <h3>Courses</h3>
+        {courses}
+        <div class="panel panel-danger">
+            <!-- Default panel contents -->
+            <div class="panel-heading">{coursename}</div>
+            <table class="table">
+                <tr>
+                    <th>Course</th>
+                    <th>Instructor</th>
+                </tr>
+                <tr>
+                    <th>{coursename}</th>
+                    <th>{instructorname}</th>
+                </tr>
+            </table>
+        </div>
+        {/courses}
     </div>
 </div>

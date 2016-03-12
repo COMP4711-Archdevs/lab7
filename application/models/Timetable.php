@@ -45,9 +45,9 @@ class Timetable extends CI_Model{
         }
         
         //build a list of courses
-        foreach($this->xml->courses->coursedetails as $course){
+      /*  foreach($this->xml->courses->coursedetails as $course){
             $this->courses[(string)$course->coursename] = $course;
-        }
+        }*/
 
          //build a list of days of the week
          foreach ($this->xml->week->dayofweek as $day) {
@@ -76,7 +76,16 @@ class Timetable extends CI_Model{
             array_push($this->periods, $record);
         }
 
+        //build list of course
+         foreach ($this->xml->courses->coursedetails as $course) {
+            $record = new stdClass();
 
+
+            $record->coursename   = $course->coursename;
+            $record->instructorname   = $course->courseinstructor;
+
+            array_push($this->courses, $record);
+        }
 
     }
     
@@ -95,8 +104,14 @@ class Timetable extends CI_Model{
         return $this->periods;
     }
 
+      //returns each xml child "days" as object in an array
      function getDays(){
         return $this->days;
+    }
+
+     //returns each xml child "coursedetails" as object in an array
+    function getCourses(){
+        return $this->courses;
     }
     
     //returns the time values currently stored in the xml (ex. 8:30)
@@ -104,10 +119,6 @@ class Timetable extends CI_Model{
         return $this->bookingdropdown;
     }
     
-    //returns each xml child "coursedetails" as object in an array
-    function getCourses(){
-        return $this->courses;
-    }
 }
 
 class Booking extends CI_Model {
@@ -131,7 +142,5 @@ class Booking extends CI_Model {
             $this->time = (string) $booking->timeslot;
             $this->room   = (string) $booking->room;
         }
-
     }
-
 }
