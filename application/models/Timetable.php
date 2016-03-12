@@ -12,6 +12,7 @@ class Timetable extends CI_Model{
     protected $xml = null;
     protected $daysofweek = array(); 
     protected $periods = array(); 
+    protected $days = array();
     protected $courses = array();
     protected $daydropdown = array();
     protected $bookingdropdown = array();
@@ -48,6 +49,20 @@ class Timetable extends CI_Model{
             $this->courses[(string)$course->coursename] = $course;
         }
 
+         //build a list of days of the week
+         foreach ($this->xml->week->dayofweek as $day) {
+            $record = new stdClass();
+
+            $record->weekday = (string) $day['day'];
+            $record->bookings         = array();
+
+            foreach ($day->booking as $booking) {
+                array_push($record->bookings, new Booking($booking));
+            }
+            array_push($this->days, $record);
+        }
+
+
         // Build list of periods
         foreach ($this->xml->periods->periodtimeslot as $timeslot) {
             $record = new stdClass();
@@ -60,6 +75,7 @@ class Timetable extends CI_Model{
             }
             array_push($this->periods, $record);
         }
+
 
 
     }
@@ -77,6 +93,10 @@ class Timetable extends CI_Model{
     //returns each xml child "periodtimeslot" as object in an array
     function getPeriods(){
         return $this->periods;
+    }
+
+     function getDays(){
+        return $this->days;
     }
     
     //returns the time values currently stored in the xml (ex. 8:30)
@@ -100,10 +120,17 @@ class Booking extends CI_Model {
     function __construct($booking) {
         parent::__construct();
 
-        $this->day        = (string) $booking->weekday;
-        $this->coursename     = (string) $booking->coursename;
-        $this->instructorname = (string) $booking->courseinstructor;
-        $this->room   = (string) $booking->room;
+        if(isset($booking->weekday)){
+            $this->day        = (string) $booking->weekday;
+            $this->coursename     = (string) $booking->coursename;
+            $this->instructorname = (string) $booking->courseinstructor;
+            $this->room   = (string) $booking->room;
+        }else{
+            $this->coursename     = (string) $booking->course->name;
+            $this->instructorname = (string) $booking->course->instructor;
+            $this->time = (string) $booking->timeslot;
+            $this->room   = (string) $booking->room;
+        }
 
     }
 
