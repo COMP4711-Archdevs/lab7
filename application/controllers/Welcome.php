@@ -39,7 +39,7 @@ class Welcome extends Application{
                 	$this->data['pageTitle'] = 'Homepage';
 		// this is the view we want shown
 		$this->data['pagebody'] = 'homepage';
-		//$this->data['days']     = $this->timetable->getDays();
+		$this->data['days']     = $this->timetable->getDays();
 		$this->data['periods']  = $this->timetable->getPeriods();
 		//$this->data['courses']  = $this->timetable->getCourses();
 
